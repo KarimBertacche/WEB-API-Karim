@@ -10,7 +10,7 @@ server.use('/api/users', userRoute);
 server.use('/api/posts', postRoute);
 
 server.get('/', (req, res) => {
-  res.send(`<h2>Let's write some middleware!</h2>`)
+  res.send(`<h2>Let's write some middleware! Now working 😁</h2>`)
 });
 
 //custom middleware
