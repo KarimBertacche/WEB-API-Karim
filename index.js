@@ -1,8 +1,16 @@
-// code away!
-const server = require('./server');
+require('dotenv').config();
 
-const port = process.env.PORT || 4000;
+const express = require('express');
+const cors = require('cors');
+const postRoute = require('./posts/postRouter');
+
+const port = process.env.PORT;
+
+const server = express();
+
+server.use(cors());
+server.use(postRoute);
 
 server.listen(port, () => {
-    console.log(`/n*** Server running on port ${port} ***/n`);
+    console.log(`** Server running on port ${port} **`);
 });
