@@ -1,11 +1,15 @@
 // code away!
 const express = require('express');
+const cors = require('cors');
 const postRoute = require('./posts/postRouter');
+
+const port = process.env.PORT;
 
 const server = express();
 
+server.use(cors());
 server.use(postRoute);
 
-server.listen(4000, () => {
-    console.log('** Server running on port 4K **');
+server.listen(port, () => {
+    console.log(`** Server running on port ${port} **`);
 });
